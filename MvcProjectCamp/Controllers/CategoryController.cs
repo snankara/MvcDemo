@@ -12,9 +12,8 @@ namespace MvcProjectCamp.Controllers
 {
     public class CategoryController : Controller
     {
-        // GET: Category
 
-        ICategoryService _categoryService;
+        private readonly ICategoryService _categoryService;
         public CategoryController()
         {
             _categoryService = new CategoryManager(new EfCategoryDal());
