@@ -1,6 +1,4 @@
 ﻿using Business.Abstract;
-using Business.ValidationRules.FluentValidation;
-using Core.Aspects.Autofac.Validation;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
@@ -27,7 +25,7 @@ namespace Business.Concrete
 
         public void Delete(Category category)
         {
-            _categoryDal.Delete(category);
+            throw new NotImplementedException();
         }
 
         public List<Category> GetAll()
@@ -37,12 +35,12 @@ namespace Business.Concrete
 
         public Category GetById(int id)
         {
-            return _categoryDal.GetById(c => c.CategoryId == id);
+            throw new NotImplementedException();
         }
 
         public void Update(Category category)
         {
-            _categoryDal.Update(category);
+            throw new NotImplementedException();
         }
     }
 }

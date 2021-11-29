@@ -22,17 +22,11 @@ namespace Entities.Concrete
         [StringLength(100)]
         public string Image { get; set; }
 
-        [StringLength(100)]
-        public string WriterAbout { get; set; }
-
-        [StringLength(200)]
+        [StringLength(50)]
         public string Email { get; set; }
 
-        [StringLength(200)]
+        [StringLength(20)]
         public string Password { get; set; }
-
-        [StringLength(50)]
-        public string Title { get; set; }
         public ICollection<Content> Contents { get; set; }
         public ICollection<Heading> Headings { get; set; }
     }
