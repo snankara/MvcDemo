@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.EntityFramework.Concrete
 {
-    public class Context: DbContext
+    public class Context : DbContext
     {
         public DbSet<About> Abouts { get; set; }
         public DbSet<Category> Categories { get; set; }

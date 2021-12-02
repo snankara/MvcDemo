@@ -4,11 +4,14 @@ using Autofac.Integration.Mvc;
 using Business.Abstract;
 using Business.Concrete;
 using Castle.DynamicProxy;
+using Core.Entities.Abstract;
 using Core.Utilities.Interceptors;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using DataAccess.EntityFramework.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +29,12 @@ namespace MvcProjectCamp.DependencyResolvers.Autofac
 
             builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
             builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
+
+            builder.RegisterType<WriterManager>().As<IWriterService>().SingleInstance();
+            builder.RegisterType<EfWriterDal>().As<IWriterDal>().SingleInstance();
+
+            builder.RegisterType<HeadingManager>().As<IHeadingService>().SingleInstance();
+            builder.RegisterType<EfHeadingDal>().As<IHeadingDal>().SingleInstance();
 
             builder.RegisterType<WriterManager>().As<IWriterService>().SingleInstance();
             builder.RegisterType<EfWriterDal>().As<IWriterDal>().SingleInstance();

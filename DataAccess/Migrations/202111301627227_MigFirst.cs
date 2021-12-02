@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class mig1 : DbMigration
+    public partial class MigFirst : DbMigration
     {
         public override void Up()
         {
@@ -70,8 +70,10 @@
                         FirstName = c.String(maxLength: 50),
                         LastName = c.String(maxLength: 50),
                         Image = c.String(maxLength: 100),
-                        Email = c.String(maxLength: 50),
-                        Password = c.String(maxLength: 20),
+                        WriterAbout = c.String(maxLength: 100),
+                        Email = c.String(maxLength: 200),
+                        Password = c.String(maxLength: 200),
+                        Title = c.String(maxLength: 50),
                     })
                 .PrimaryKey(t => t.WriterId);
             

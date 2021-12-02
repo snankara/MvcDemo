@@ -18,9 +18,9 @@ namespace Entities.Concrete
 
         [StringLength(200)]
         public string Description { get; set; }
-
+        
         public bool Status { get; set; }
 
-        public ICollection<Heading> Headings { get; set; }
+        public virtual ICollection<Heading> Headings { get; set; }
     }
 }
