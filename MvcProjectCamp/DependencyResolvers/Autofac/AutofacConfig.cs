@@ -38,6 +38,9 @@ namespace MvcProjectCamp.DependencyResolvers.Autofac
 
             builder.RegisterType<WriterManager>().As<IWriterService>().SingleInstance();
             builder.RegisterType<EfWriterDal>().As<IWriterDal>().SingleInstance();
+            
+            builder.RegisterType<ContentManager>().As<IContentService>().SingleInstance();
+            builder.RegisterType<EfContentDal>().As<IContentDal>().SingleInstance();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

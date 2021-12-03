@@ -56,5 +56,33 @@ namespace MvcProjectCamp.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public ActionResult Update(int id)
+        {
+            List<SelectListItem> categories = (from x in _categoryService.GetAll()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.Name,
+                                                   Value = x.CategoryId.ToString()
+                                               }).ToList();
+
+            var heading = _headingService.GetById(id);
+            ViewBag.categories = categories;
+            return View(heading);
+        }
+
+        [HttpPost]
+        public ActionResult Update(Heading heading)
+        {
+            _headingService.Update(heading);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var heading = _headingService.GetById(id);
+            _headingService.Delete(heading);
+            return RedirectToAction("Index");
+        }
     }
 }

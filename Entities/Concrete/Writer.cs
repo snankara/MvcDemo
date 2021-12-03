@@ -33,6 +33,8 @@ namespace Entities.Concrete
 
         [StringLength(50)]
         public string Title { get; set; }
+
+        public bool Status { get; set; }
         public virtual ICollection<Content> Contents { get; set; }
         public virtual ICollection<Heading> Headings { get; set; }
     }
