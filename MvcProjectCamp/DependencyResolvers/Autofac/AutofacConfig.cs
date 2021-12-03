@@ -9,6 +9,7 @@ using Core.Utilities.Interceptors;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.EntityFramework.Concrete;
+using MvcProjectCamp.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -27,20 +28,17 @@ namespace MvcProjectCamp.DependencyResolvers.Autofac
 
             builder.RegisterControllers(typeof(MvcApplication).Assembly);
 
-            builder.RegisterType<CategoryManager>().As<ICategoryService>().SingleInstance();
-            builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().SingleInstance();
+            builder.RegisterType<CategoryManager>().As<ICategoryService>().InstancePerRequest();
+            builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().InstancePerRequest();
 
-            builder.RegisterType<WriterManager>().As<IWriterService>().SingleInstance();
-            builder.RegisterType<EfWriterDal>().As<IWriterDal>().SingleInstance();
+            builder.RegisterType<WriterManager>().As<IWriterService>().InstancePerRequest();
+            builder.RegisterType<EfWriterDal>().As<IWriterDal>().InstancePerRequest();
 
-            builder.RegisterType<HeadingManager>().As<IHeadingService>().SingleInstance();
-            builder.RegisterType<EfHeadingDal>().As<IHeadingDal>().SingleInstance();
-
-            builder.RegisterType<WriterManager>().As<IWriterService>().SingleInstance();
-            builder.RegisterType<EfWriterDal>().As<IWriterDal>().SingleInstance();
+            builder.RegisterType<HeadingManager>().As<IHeadingService>().InstancePerRequest();
+            builder.RegisterType<EfHeadingDal>().As<IHeadingDal>().InstancePerRequest();
             
-            builder.RegisterType<ContentManager>().As<IContentService>().SingleInstance();
-            builder.RegisterType<EfContentDal>().As<IContentDal>().SingleInstance();
+            builder.RegisterType<ContentManager>().As<IContentService>().InstancePerRequest();
+            builder.RegisterType<EfContentDal>().As<IContentDal>().InstancePerRequest();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
