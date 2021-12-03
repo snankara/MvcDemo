@@ -2315,6 +2315,7 @@
     <Content Include="Views\Writer\Add.cshtml" />
     <Content Include="Views\Writer\Update.cshtml" />
     <Content Include="Views\Heading\Index.cshtml" />
+    <Content Include="Views\Heading\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

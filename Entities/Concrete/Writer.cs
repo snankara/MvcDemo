@@ -19,7 +19,7 @@ namespace Entities.Concrete
         [StringLength(50)]
         public string LastName { get; set; }
 
-        [StringLength(100)]
+        [StringLength(250)]
         public string Image { get; set; }
 
         [StringLength(100)]
