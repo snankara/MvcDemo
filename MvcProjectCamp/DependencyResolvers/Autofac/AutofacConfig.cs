@@ -36,9 +36,15 @@ namespace MvcProjectCamp.DependencyResolvers.Autofac
 
             builder.RegisterType<HeadingManager>().As<IHeadingService>().InstancePerRequest();
             builder.RegisterType<EfHeadingDal>().As<IHeadingDal>().InstancePerRequest();
-            
+
             builder.RegisterType<ContentManager>().As<IContentService>().InstancePerRequest();
             builder.RegisterType<EfContentDal>().As<IContentDal>().InstancePerRequest();
+
+            builder.RegisterType<AboutManager>().As<IAboutService>().InstancePerRequest();
+            builder.RegisterType<EfAboutDal>().As<IAboutDal>().InstancePerRequest();
+            
+            builder.RegisterType<ContactManager>().As<IContactService>().InstancePerRequest();
+            builder.RegisterType<EfContactDal>().As<IContactDal>().InstancePerRequest();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

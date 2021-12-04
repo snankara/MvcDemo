@@ -83,6 +83,7 @@ namespace MvcProjectCamp.Controllers
         public ActionResult Delete(int id)
         {
             var heading = _headingService.GetById(id);
+            heading.Status = false;
             _headingService.Delete(heading);
             return RedirectToAction("Index");
         }

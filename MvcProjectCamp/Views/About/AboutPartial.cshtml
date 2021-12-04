@@ -1,0 +1,32 @@
+﻿<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal1">
+    Hakkımızda Ekle
+</button>
+
+<div class="modal" id="modal1">
+    <div class="modal-dialog">
+        <div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Hakkımızda İçeriği</h2>
+                </div>
+                <form method="post" action="/About/Add/">
+                    <div class="modal-body">
+                        <label>1. Paragraf</label>
+                        <input type="text" name="Detail1" class="form-control" />
+                        <br />
+                        <label>2. Paragraf</label>
+                        <input type="text" name="Detail2" class="form-control" />
+                        <br />
+                        <label>1. Görsel</label>
+                        <input type="text" name="ImageUrl1" class="form-control" />
+                        <br />
+                        <label>2. Görsel</label>
+                        <input type="text" name="ImageUrl2" class="form-control" />
+                        <br />
+                        <button class="btn btn-outline-primary btn-sm">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
