@@ -42,9 +42,12 @@ namespace MvcProjectCamp.DependencyResolvers.Autofac
 
             builder.RegisterType<AboutManager>().As<IAboutService>().InstancePerRequest();
             builder.RegisterType<EfAboutDal>().As<IAboutDal>().InstancePerRequest();
-            
+
             builder.RegisterType<ContactManager>().As<IContactService>().InstancePerRequest();
             builder.RegisterType<EfContactDal>().As<IContactDal>().InstancePerRequest();
+
+            builder.RegisterType<MessageManager>().As<IMessageService>().InstancePerRequest();
+            builder.RegisterType<EfMessageDal>().As<IMessageDal>().InstancePerRequest();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
