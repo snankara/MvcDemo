@@ -48,6 +48,9 @@ namespace MvcProjectCamp.DependencyResolvers.Autofac
 
             builder.RegisterType<MessageManager>().As<IMessageService>().InstancePerRequest();
             builder.RegisterType<EfMessageDal>().As<IMessageDal>().InstancePerRequest();
+            
+            builder.RegisterType<ImageManager>().As<IImageService>().InstancePerRequest();
+            builder.RegisterType<EfImageDal>().As<IImageDal>().InstancePerRequest();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

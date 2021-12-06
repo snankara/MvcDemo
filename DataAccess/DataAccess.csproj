@@ -56,8 +56,10 @@
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
     <Compile Include="Abstract\IHeadingDal.cs" />
+    <Compile Include="Abstract\IImageDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfImageDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfMessageDal.cs" />
     <Compile Include="Concrete\EntityFramework\Context.cs" />
     <Compile Include="Concrete\EntityFramework\EfAboutDal.cs" />
@@ -89,6 +91,14 @@
     <Compile Include="Migrations\202112051605573_mig_add_message_class.cs" />
     <Compile Include="Migrations\202112051605573_mig_add_message_class.designer.cs">
       <DependentUpon>202112051605573_mig_add_message_class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112061019167_mig_contact_date_column_add.cs" />
+    <Compile Include="Migrations\202112061019167_mig_contact_date_column_add.designer.cs">
+      <DependentUpon>202112061019167_mig_contact_date_column_add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112061110170_mig_add_image_class.cs" />
+    <Compile Include="Migrations\202112061110170_mig_add_image_class.designer.cs">
+      <DependentUpon>202112061110170_mig_add_image_class.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,6 +135,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112051605573_mig_add_message_class.resx">
       <DependentUpon>202112051605573_mig_add_message_class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112061019167_mig_contact_date_column_add.resx">
+      <DependentUpon>202112061019167_mig_contact_date_column_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112061110170_mig_add_image_class.resx">
+      <DependentUpon>202112061110170_mig_add_image_class.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

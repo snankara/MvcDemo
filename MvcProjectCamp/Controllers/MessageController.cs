@@ -49,9 +49,9 @@ namespace MvcProjectCamp.Controllers
         [HttpPost]
         public ActionResult Add(Message message)
         {
+            message.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
             _messageService.Add(message);
             return RedirectToAction("Sendbox");
         }
-
     }
 }
