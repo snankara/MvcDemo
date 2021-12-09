@@ -17,6 +17,7 @@ namespace MvcProjectCamp.Controllers
             _messageService = messageService;
         }
 
+        [Authorize]
         public ActionResult Inbox()
         {
             var messages = _messageService.GetAllInbox();

@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAboutDal.cs" />
+    <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IContactDal.cs" />
     <Compile Include="Abstract\IContentDal.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Abstract\IImageDal.cs" />
     <Compile Include="Abstract\IMessageDal.cs" />
     <Compile Include="Abstract\IWriterDal.cs" />
+    <Compile Include="Concrete\EntityFramework\EfAdminDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfImageDal.cs" />
     <Compile Include="Concrete\EntityFramework\EfMessageDal.cs" />
     <Compile Include="Concrete\EntityFramework\Context.cs" />
@@ -99,6 +101,10 @@
     <Compile Include="Migrations\202112061110170_mig_add_image_class.cs" />
     <Compile Include="Migrations\202112061110170_mig_add_image_class.designer.cs">
       <DependentUpon>202112061110170_mig_add_image_class.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112081217193_mig_admin_table.cs" />
+    <Compile Include="Migrations\202112081217193_mig_admin_table.designer.cs">
+      <DependentUpon>202112081217193_mig_admin_table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112061110170_mig_add_image_class.resx">
       <DependentUpon>202112061110170_mig_add_image_class.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112081217193_mig_admin_table.resx">
+      <DependentUpon>202112081217193_mig_admin_table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

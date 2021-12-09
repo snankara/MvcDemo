@@ -22,6 +22,7 @@ namespace MvcProjectCamp.Controllers
             _categoryService = categoryService;
         }
 
+        [Authorize]
         public ActionResult Index()
         {
             var categories = _categoryService.GetAll();
