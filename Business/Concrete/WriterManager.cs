@@ -28,9 +28,19 @@ namespace Business.Concrete
             _writerDal.Delete(writer);
         }
 
+        public Writer Get(string userName, string password)
+        {
+            return _writerDal.Get(w => w.Email == userName && w.Password == password);
+        }
+
         public List<Writer> GetAll()
         {
             return _writerDal.GetAll();
+        }
+
+        public Writer GetByEmail(string email)
+        {
+            return _writerDal.Get(w => w.Email == email);
         }
 
         public Writer GetById(int id)

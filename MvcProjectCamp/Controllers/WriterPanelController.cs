@@ -12,11 +12,13 @@ namespace MvcProjectCamp.Controllers
     {
         private readonly IHeadingService _headingService;
         private readonly ICategoryService _categoryService;
+        private readonly IWriterService _writerService;
 
-        public WriterPanelController(IHeadingService headingService, ICategoryService categoryService)
+        public WriterPanelController(IHeadingService headingService, ICategoryService categoryService, IWriterService writerService)
         {
             _headingService = headingService;
             _categoryService = categoryService;
+            _writerService = writerService;
         }
 
         public ActionResult WriterProfile()
@@ -25,9 +27,10 @@ namespace MvcProjectCamp.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetAllHeading(int id = 1)
+        public ActionResult GetAllHeading()
         {
-            var headings = _headingService.GetAllByWriterId(id);
+            var currentWriter = _writerService.GetByEmail((string)Session["Email"]);
+            var headings = _headingService.GetAllByWriterId(currentWriter.WriterId);
             return View(headings);
         }
 
@@ -47,7 +50,7 @@ namespace MvcProjectCamp.Controllers
         [HttpPost]
         public ActionResult HeadingAdd(Heading heading)
         {
-            heading.WriterId = 1;
+            heading.WriterId = _writerService.GetByEmail((string)Session["Email"]).WriterId;
             heading.HeadingDate = DateTime.Parse(DateTime.Now.ToShortDateString());
             heading.Status = true;
             _headingService.Add(heading);

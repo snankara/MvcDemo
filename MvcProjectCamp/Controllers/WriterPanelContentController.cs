@@ -10,15 +10,17 @@ namespace MvcProjectCamp.Controllers
     public class WriterPanelContentController : Controller
     {
         private readonly IContentService _contentService;
-
-        public WriterPanelContentController(IContentService contentService)
+        private readonly IWriterService _writerService;
+        public WriterPanelContentController(IContentService contentService, IWriterService writerService)
         {
             _contentService = contentService;
+            _writerService = writerService;
         }
 
         public ActionResult GetAllContent()
         {
-            var contents = _contentService.GetContentByWriterId();
+            var currentWriter = _writerService.GetByEmail((string)Session["Email"]);
+            var contents = _contentService.GetContentByWriterId(currentWriter.WriterId);
             return View(contents);
         }
     }
