@@ -1,8 +1,9 @@
 ﻿@using Entities.Concrete
 @model List<Heading>
+
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "GetAllHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
 @{string color = "";}
@@ -35,9 +36,6 @@
                             </th>
                             <th style="width: 15%">
                                 Oluşturan Yazar
-                            </th>
-                            <th style="width: 10%">
-                                Durum
                             </th>
                             <th style="width: 8%" class="text-center">
                                 Kategori
@@ -83,9 +81,6 @@
                                         </li>
                                     </ul>
                                 </td>
-                                <td>
-                                    @item.Status
-                                </td>
                                 <td class="project-state">
                                     <span class="@color">@item.Category.Name</span>
                                 </td>
@@ -95,12 +90,12 @@
                                         </i>
                                         İçerik
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="/Heading/Update/@item.HeadingId">
+                                    <a class="btn btn-info btn-sm" href="/WriterPanel/HeadingUpdate/@item.HeadingId">
                                         <i class="fas fa-pencil-alt mr-1">
                                         </i>
                                         Düzenle
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="/Heading/Delete/@item.HeadingId">
+                                    <a class="btn btn-danger btn-sm" href="/WriterPanel/HeadingDelete/@item.HeadingId">
                                         <i class="fas fa-trash mr-1">
                                         </i>
                                         Sil
@@ -115,4 +110,5 @@
     </section>
 </body>
 </html>
-<a href="/Heading/Add" class="btn btn-primary">Başlık Oluştur</a>
+<a href="/WriterPanel/HeadingAdd" class="btn btn-primary">Başlık Oluştur</a>
+

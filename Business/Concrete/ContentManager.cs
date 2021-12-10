@@ -43,6 +43,11 @@ namespace Business.Concrete
             return _contentDal.GetAll(c => c.HeadingId == id);
         }
 
+        public List<Content> GetContentByWriterId()
+        {
+            return _contentDal.GetAll(c => c.WriterId == 1);
+        }
+
         public void Update(Content content)
         {
             _contentDal.Update(content);
