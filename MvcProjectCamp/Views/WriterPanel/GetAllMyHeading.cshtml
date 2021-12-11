@@ -85,15 +85,20 @@
                                     <span class="@color">@item.Category.Name</span>
                                 </td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm" href="/Default/Headings/@item.HeadingId">
+                                    <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingId">
                                         <i class="fas fa-folder mr-1">
                                         </i>
                                         İçerik
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="/WriterPanelContent/Add/@item.HeadingId">
+                                    <a class="btn btn-info btn-sm" href="/WriterPanel/HeadingUpdate/@item.HeadingId">
                                         <i class="fas fa-pencil-alt mr-1">
                                         </i>
-                                        Bu Başlığa Yaz
+                                        Düzenle
+                                    </a>
+                                    <a class="btn btn-danger btn-sm" href="/WriterPanel/HeadingDelete/@item.HeadingId">
+                                        <i class="fas fa-trash mr-1">
+                                        </i>
+                                        Sil
                                     </a>
                                 </td>
                             </tr>
@@ -105,4 +110,5 @@
     </section>
 </body>
 </html>
+<a href="/WriterPanel/HeadingAdd" class="btn btn-primary">Başlık Oluştur</a>
 

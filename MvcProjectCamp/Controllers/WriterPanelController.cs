@@ -27,10 +27,17 @@ namespace MvcProjectCamp.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetAllHeading()
+        public ActionResult GetAllMyHeading()
         {
             var currentWriter = _writerService.GetByEmail((string)Session["Email"]);
             var headings = _headingService.GetAllByWriterId(currentWriter.WriterId);
+            return View(headings);
+        }
+
+        [HttpGet]
+        public ActionResult GetAllHeading()
+        {
+            var headings = _headingService.GetAll();
             return View(headings);
         }
 

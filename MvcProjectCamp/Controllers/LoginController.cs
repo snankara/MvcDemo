@@ -62,5 +62,12 @@ namespace MvcProjectCamp.Controllers
             return RedirectToAction("GetAllContent", "WriterPanelContent");
         }
 
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Headings", "Default");
+        }
+
     }
 }
