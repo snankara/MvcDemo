@@ -9,8 +9,8 @@ namespace Business.Abstract
 {
     public interface IMessageService
     {
-        List<Message> GetAllInbox();
-        List<Message> GetAllSendbox();
+        List<Message> GetAllInbox(string email);
+        List<Message> GetAllSendbox(string email);
         Message GetById(int id);
         void Add(Message message);
         void Update(Message message);

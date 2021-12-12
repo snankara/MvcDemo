@@ -19,13 +19,13 @@ namespace MvcProjectCamp.Controllers
 
         public ActionResult Inbox()
         {
-            var messages = _messageService.GetAllInbox();
+            var messages = _messageService.GetAllInbox((string)Session["Email"]);
             return View(messages);
         }
 
         public ActionResult Sendbox()
         {
-            var messages = _messageService.GetAllSendbox();
+            var messages = _messageService.GetAllSendbox((string)Session["Email"]);
             return View(messages);
         }
 
@@ -55,7 +55,7 @@ namespace MvcProjectCamp.Controllers
         [HttpPost]
         public ActionResult Add(Message message)
         {
-            message.SenderMail = "snan@gmail.com";
+            message.SenderMail = (string)Session["Email"];
             message.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
             _messageService.Add(message);
             return RedirectToAction("Sendbox");

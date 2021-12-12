@@ -28,14 +28,14 @@ namespace Business.Concrete
             _messageDal.Delete(message);
         }
 
-        public List<Message> GetAllInbox()
+        public List<Message> GetAllInbox(string email)
         {
-            return _messageDal.GetAll(m => m.ReceiverMail == "snan@gmail.com");
+            return _messageDal.GetAll(m => m.ReceiverMail == email);
         }
 
-        public List<Message> GetAllSendbox()
+        public List<Message> GetAllSendbox(string email)
         {
-            return _messageDal.GetAll(m => m.SenderMail == "snan@gmail.com");
+            return _messageDal.GetAll(m => m.SenderMail == email);
         }
 
         public Message GetById(int id)

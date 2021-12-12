@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
+using PagedList.Mvc;
+
 
 namespace MvcProjectCamp.Controllers
 {
@@ -21,10 +24,20 @@ namespace MvcProjectCamp.Controllers
             _writerService = writerService;
         }
 
+        [HttpGet]
         public ActionResult WriterProfile()
         {
-            return View();
+            var currentWriter = _writerService.GetByEmail((string)Session["Email"]);
+            return View(currentWriter);
         }
+
+        [HttpPost]
+        public ActionResult WriterProfile(Writer writer)
+        {
+            _writerService.Update(writer);
+            return RedirectToAction("WriterProfile");
+        }
+
 
         [HttpGet]
         public ActionResult GetAllMyHeading()
@@ -35,9 +48,9 @@ namespace MvcProjectCamp.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetAllHeading()
+        public ActionResult GetAllHeading(int page = 1)
         {
-            var headings = _headingService.GetAll();
+            var headings = _headingService.GetAll().ToPagedList(page, 3);
             return View(headings);
         }
 
