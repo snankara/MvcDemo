@@ -10,6 +10,7 @@ namespace Business.Abstract
     public interface IContentService
     {
         List<Content> GetAll();
+        List<Content> GetFilteredContent(string key);
         List<Content> GetContentByHeadingId(int id);
         List<Content> GetContentByWriterId(int id);
         Content GetById(int id);

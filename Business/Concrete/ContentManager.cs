@@ -48,6 +48,11 @@ namespace Business.Concrete
             return _contentDal.GetAll(c => c.WriterId == id);
         }
 
+        public List<Content> GetFilteredContent(string key)
+        {
+            return _contentDal.GetAll(c => c.ContentText.ToLower().Contains(key.ToLower()));
+        }
+
         public void Update(Content content)
         {
             _contentDal.Update(content);

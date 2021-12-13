@@ -16,9 +16,15 @@ namespace MvcProjectCamp.Controllers
             _contentService = contentService;
         }
 
-        public ActionResult Index()
+        public ActionResult GetAll(string key)
         {
-            return View();
+            var contents = _contentService.GetAll();
+            if (!string.IsNullOrEmpty(key))
+            {
+                contents = _contentService.GetFilteredContent(key);
+            }
+
+            return View(contents);
         }
 
         public ActionResult ContentByHeading(int id)
