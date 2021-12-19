@@ -1,6 +1,4 @@
 ﻿using Business.Abstract;
-using Business.ValidationRules.FluentValidation;
-using Core.Aspects.Autofac.Validation;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;

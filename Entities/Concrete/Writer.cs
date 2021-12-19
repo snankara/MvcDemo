@@ -1,4 +1,6 @@
 ﻿using Core.Entities.Abstract;
+using Entities.ValidationRules.FluentValidation;
+using FluentValidation.Attributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
+    [Validator(typeof(WriterValidator))]
     public class Writer : IEntity
     {
         [Key]

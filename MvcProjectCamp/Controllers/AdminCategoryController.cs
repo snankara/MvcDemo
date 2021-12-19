@@ -1,10 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
-using Business.ValidationRules.FluentValidation;
-using Core.Aspects.Autofac.Validation;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
-using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +19,7 @@ namespace MvcProjectCamp.Controllers
             _categoryService = categoryService;
         }
 
-        [Authorize(Roles = "B")]
+        //[Authorize(Roles = "B")]
         public ActionResult Index()
         {
             var categories = _categoryService.GetAll();
@@ -36,19 +33,12 @@ namespace MvcProjectCamp.Controllers
         }
 
         [HttpPost]
-        [ValidationAspect(typeof(CategoryValidator))]
         public ActionResult Add(Category category)
         {
-            //CategoryValidator categoryValidator = new CategoryValidator();
-            //ValidationResult validationResults = categoryValidator.Validate(category);
-            //if (!validationResults.IsValid)
-            //{
-            //    foreach (var item in validationResults.Errors)
-            //    {
-            //        ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-            //        return View();
-            //    }
-            //}
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
 
             _categoryService.Add(category);
             return RedirectToAction("Index");

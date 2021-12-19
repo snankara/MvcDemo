@@ -1,4 +1,7 @@
 ﻿using Core.Entities.Abstract;
+using Entities.ValidationRules.FluentValidation;
+using FluentValidation;
+using FluentValidation.Attributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
+    [Validator(typeof(CategoryValidator))]
     public class Category : IEntity 
     {
         [Key]

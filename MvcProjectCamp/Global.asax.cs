@@ -1,4 +1,5 @@
-﻿using MvcProjectCamp.DependencyResolvers.Autofac;
+﻿using FluentValidation.Mvc;
+using MvcProjectCamp.DependencyResolvers.Autofac;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,7 @@ namespace MvcProjectCamp
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutofacConfig.Register();
+            FluentValidationModelValidatorProvider.Configure();
         }
     }
 }

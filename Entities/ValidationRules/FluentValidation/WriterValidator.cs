@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.ValidationRules.FluentValidation
+namespace Entities.ValidationRules.FluentValidation
 {
     public class WriterValidator : AbstractValidator<Writer>
     {
