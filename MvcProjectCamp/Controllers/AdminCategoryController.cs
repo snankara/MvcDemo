@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace MvcProjectCamp.Controllers
 {
@@ -18,6 +19,7 @@ namespace MvcProjectCamp.Controllers
         }
 
         //[Authorize(Roles = "B")]
+        //[OutputCache(CacheProfile = "Short")]
         public ActionResult Index()
         {
             var categories = _categoryService.GetAll();
