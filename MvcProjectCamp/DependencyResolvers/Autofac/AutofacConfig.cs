@@ -1,18 +1,13 @@
 ﻿using Autofac;
-using Autofac.Extras.DynamicProxy;
 using Autofac.Integration.Mvc;
 using Business.Abstract;
 using Business.Concrete;
-using Castle.DynamicProxy;
-using Core.Entities.Abstract;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
-using DataAccess.EntityFramework.Concrete;
-using MvcProjectCamp.Controllers;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -25,7 +20,7 @@ namespace MvcProjectCamp.DependencyResolvers.Autofac
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterControllers(typeof(MvcApplication).Assembly);
+            builder.RegisterControllers(Assembly.GetExecutingAssembly());
 
             builder.RegisterType<CategoryManager>().As<ICategoryService>().InstancePerRequest();
             builder.RegisterType<EfCategoryDal>().As<ICategoryDal>().InstancePerRequest();
@@ -56,14 +51,6 @@ namespace MvcProjectCamp.DependencyResolvers.Autofac
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-
-            //var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            //builder.RegisterAssemblyTypes(assembly).AsImplementedInterfaces()
-            //    .EnableInterfaceInterceptors(new ProxyGenerationOptions()
-            //    {
-            //        Selector = new AspectInterceptorSelector()
-            //    }).SingleInstance();
-
 
         }
     }
