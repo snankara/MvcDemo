@@ -19,7 +19,7 @@ namespace MvcProjectCamp.Controllers
         }
 
         //[Authorize(Roles = "B")]
-        //[OutputCache(CacheProfile = "Short")]
+        //[OutputCache(Duration = 600, Location = OutputCacheLocation.Client, NoStore = true)]
         public ActionResult Index()
         {
             var categories = _categoryService.GetAll();
