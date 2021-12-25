@@ -48,7 +48,7 @@ namespace MvcProjectCamp.Controllers
             List<SelectListItem> writers = (from x in _writerService.GetAll()
                                             select new SelectListItem
                                             {
-                                                Text = x.FirstName + " " + x.LastName,
+                                                Text = x.User.FirstName + " " + x.User.LastName,
                                                 Value = x.WriterId.ToString()
                                             }).ToList();
 

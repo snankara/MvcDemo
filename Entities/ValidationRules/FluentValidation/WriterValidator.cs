@@ -12,9 +12,9 @@ namespace Entities.ValidationRules.FluentValidation
     {
         public WriterValidator()
         {
-            RuleFor(w => w.FirstName).NotEmpty().WithMessage("Yazar adı boş olamaz !");
-            RuleFor(w => w.LastName).NotEmpty().WithMessage("Yazar soyadı boş olamaz ! !");
-            RuleFor(w => w.Email).NotEmpty().WithMessage("Yazar e-mail adresi boş olamaz ! !");
+            RuleFor(w => w.User.FirstName).NotEmpty().WithMessage("Yazar adı boş olamaz !");
+            RuleFor(w => w.User.LastName).NotEmpty().WithMessage("Yazar soyadı boş olamaz ! !");
+            RuleFor(w => w.User.Email).NotEmpty().WithMessage("Yazar e-mail adresi boş olamaz ! !");
         }
     }
 }

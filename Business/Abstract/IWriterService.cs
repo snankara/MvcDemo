@@ -10,7 +10,7 @@ namespace Business.Abstract
     public interface IWriterService
     {
         List<Writer> GetAll();
-        Writer Get(string userName, string password);
+        //Writer Get(string userName, string password);
         Writer GetById(int id);
         Writer GetByEmail(string email);
         void Add(Writer writer);

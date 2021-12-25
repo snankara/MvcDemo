@@ -44,6 +44,9 @@ namespace MvcProjectCamp.DependencyResolvers.Autofac
             builder.RegisterType<AdminManager>().As<IAdminService>().InstancePerRequest();
             builder.RegisterType<EfAdminDal>().As<IAdminDal>().InstancePerRequest();
 
+            builder.RegisterType<UserManager>().As<IUserService>().InstancePerRequest();
+            builder.RegisterType<EfUserDal>().As<IUserDal>().InstancePerRequest();
+
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
 

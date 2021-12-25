@@ -51,14 +51,14 @@ namespace MvcProjectCamp.Controllers
         [HttpPost]
         public ActionResult WriterLogin(Writer writer)
         {
-            var writerInfo = _writerService.Get(writer.Email, writer.Password);
-            if (writerInfo == null)
-            {
-                return RedirectToAction("WriterLogin");
-            }
+            //var writerInfo = _writerService.Get(writer.Email, writer.Password);
+            //if (writerInfo == null)
+            //{
+            //    return RedirectToAction("WriterLogin");
+            //}
 
-            FormsAuthentication.SetAuthCookie(writerInfo.Email, false);
-            Session["Email"] = writerInfo.Email;
+            //FormsAuthentication.SetAuthCookie(writerInfo.Email, false);
+            //Session["Email"] = writerInfo.Email;
             return RedirectToAction("GetAllContent", "WriterPanelContent");
         }
 

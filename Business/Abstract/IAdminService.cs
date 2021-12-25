@@ -15,6 +15,5 @@ namespace Business.Abstract
         void Add(Admin admin);
         void Update(Admin admin);
         void Delete(Admin admin);
-
     }
 }

@@ -28,10 +28,10 @@ namespace Business.Concrete
             _writerDal.Delete(writer);
         }
 
-        public Writer Get(string userName, string password)
-        {
-            return _writerDal.Get(w => w.Email == userName && w.Password == password);
-        }
+        //public Writer Get(string userName, string password)
+        //{
+        //    return _writerDal.Get(w => w.User.Email == userName && w.Password == password);
+        //}
 
         public List<Writer> GetAll()
         {
@@ -40,7 +40,7 @@ namespace Business.Concrete
 
         public Writer GetByEmail(string email)
         {
-            return _writerDal.Get(w => w.Email == email);
+            return _writerDal.Get(w => w.User.Email == email);
         }
 
         public Writer GetById(int id)
