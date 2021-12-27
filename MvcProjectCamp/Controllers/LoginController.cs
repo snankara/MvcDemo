@@ -30,16 +30,17 @@ namespace MvcProjectCamp.Controllers
         [HttpPost]
         public ActionResult Index(Admin admin)
         {
-            var adminInfo = _adminService.Get(admin.UserName, admin.Password);
+            //var adminInfo = _adminService.Get(admin.UserName, admin.Password);
 
-            if (adminInfo == null)
-            {
-                return RedirectToAction("Index");
-            }
+            //if (adminInfo == null)
+            //{
+            //    return RedirectToAction("Index");
+            //}
 
-            FormsAuthentication.SetAuthCookie(adminInfo.UserName, false);
-            Session["UserName"] = adminInfo.UserName;
-            return RedirectToAction("Index", "AdminCategory");
+            //FormsAuthentication.SetAuthCookie(adminInfo.UserName, false);
+            //Session["UserName"] = adminInfo.UserName;
+            //return RedirectToAction("Index", "AdminCategory");
+            return View();
         }
 
         [HttpGet]

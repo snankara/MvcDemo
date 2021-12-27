@@ -1,10 +1,5 @@
 ﻿using Entities.Concrete;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess.EntityFramework.Concrete
 {
@@ -19,5 +14,6 @@ namespace DataAccess.EntityFramework.Concrete
         public DbSet<Message> Messages { get; set; }
         public DbSet<Image> Images { get; set; }
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

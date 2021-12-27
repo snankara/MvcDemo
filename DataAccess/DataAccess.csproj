@@ -108,6 +108,10 @@
     <Compile Include="Migrations\202112081217193_mig_admin_table.designer.cs">
       <DependentUpon>202112081217193_mig_admin_table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112271929161_mig_user_class_created.cs" />
+    <Compile Include="Migrations\202112271929161_mig_user_class_created.designer.cs">
+      <DependentUpon>202112271929161_mig_user_class_created.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -152,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202112081217193_mig_admin_table.resx">
       <DependentUpon>202112081217193_mig_admin_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112271929161_mig_user_class_created.resx">
+      <DependentUpon>202112271929161_mig_user_class_created.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

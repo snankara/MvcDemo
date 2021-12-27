@@ -39,8 +39,9 @@ namespace MvcProjectCamp.Roles
         public override string[] GetRolesForUser(string username)
         {
             Context context = new Context();
-            var admin = context.Admins.FirstOrDefault(a => a.UserName == username);
-            return new string[] { admin.AdminRole };
+            //var admin = context.Admins.FirstOrDefault(a => a.UserName == username);
+            //return new string[] { admin.AdminRole };
+            return null;
         }
 
         public override string[] GetUsersInRole(string roleName)

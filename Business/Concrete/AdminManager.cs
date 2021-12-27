@@ -30,7 +30,8 @@ namespace Business.Concrete
 
         public Admin Get(string userName, string password)
         {
-            return _adminDal.Get(a => a.UserName == userName && a.Password == password);
+            //return _adminDal.Get(a => a.UserName == userName && a.Password == password);
+            return null;
         }
 
         public List<Admin> GetAll()
